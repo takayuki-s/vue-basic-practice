@@ -10,7 +10,8 @@
     <script src="vue.js"></script>
 
     <div id="app">
-      <p>{{message}}</p>
+      <p v-once>{{message}}</p>
+      <p v-text="message"></p>
       <p>{{number + 3}}</p>
       <p>{{ok ? 'YES' : 'NO'}}</p>
       <p>{{sayHi()}}</p>
@@ -33,6 +34,7 @@
             return "Hi";
           },
           sayHello: function () {
+            this.message = "Hello VueJS";
             return this.message;
           },
         },
