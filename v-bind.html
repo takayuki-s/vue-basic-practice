@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="vue.js"></script>
+
+    <div id="app">
+      <p>
+        <a href="{{ url }}">Google</a>
+      </p>
+      <p>
+        <a v-bind:href="url">Google（v-bind）</a>
+      </p>
+      <p>
+        <a :href="url">Google（v-bind省略）</a>
+      </p>
+      <p>
+        <a :[attribute]="url">Google（attribute）</a>
+      </p>
+      <p>
+        <a :href="urlTwitter" :id="number">Twitter</a>
+      </p>
+      <p>
+        <a v-bind="{href: urlTwitter, id: number}"
+          >Twitter（オブジェクト形式でv-bind）</a
+        >
+      </p>
+      <p>
+        <a v-bind="twitterObject"
+          >Twitter（hrefやidをオブジェクト化して引き渡し）</a
+        >
+      </p>
+    </div>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          url: "https://google.com",
+          urlTwitter: "https://twitter.com",
+          number: 31,
+          attribute: "href",
+          twitterObject: {
+            href: "https://twitter.com",
+            number: 31,
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
