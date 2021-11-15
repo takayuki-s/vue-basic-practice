@@ -25,6 +25,7 @@
         >これもGoogleに飛べません</a
       >
       <p>X:{{x}}、 Y:{{y}}</p>
+      <input type="text" v-on:keyup.enter="myAlert" />
     </div>
     <script>
       new Vue({
@@ -47,6 +48,9 @@
           },
           noClickEvent: function (event) {
             event.preventDefault();
+          },
+          myAlert: function () {
+            alert("アラート！");
           },
         },
       });
