@@ -13,6 +13,9 @@
       <p>現在{{ number }}回クリックされています</p>
       <button v-on:[event]="countUp">カウントアップ</button>
       <button @click="countUp">カウントアップ</button>
+      <button @click="countUp()">カウントアップ</button>
+      <p>{{ doubleCounterComputed }}</p>
+      <p>{{ doubleCounterMethod() }}</p>
       <h2>computedプロパティを使って動的なデータを表現する</h2>
       <p>{{ counter }}</p>
       <button @click="counter += 1">+1</button>
@@ -40,11 +43,17 @@
             console.log("Computed");
             return this.counter > 3 ? "3より上" : "3以下";
           },
+          doubleCounterMethod: function () {
+            return this.number * 2;
+          },
         },
         computed: {
           lessThanThreeComputed: function () {
             console.log("Merhod");
             return this.counter > 3 ? "3より上" : "3以下";
+          },
+          doubleCounterComputed: function () {
+            return this.number * 2;
           },
         },
         watch: {
