@@ -14,8 +14,9 @@
       <h1 :class="{ red: isActive, 'bg-blue': !isActive }">Hello</h1>
       <h1 :class="classObject">Hello</h1>
       <button @click="isActive = !isActive">切り替え</button>
-
       <h1 :class="[{red: isActive}, bg]">Hello</h1>
+
+      <h1 :style="{color: textColor, 'background-color': bgColor}">Hello</h1>
     </div>
     <script>
       new Vue({
@@ -24,6 +25,8 @@
           isActive: true,
           color: "red",
           bg: "bg-blue",
+          textColor: "red",
+          bgColor: "blue",
         },
         computed: {
           classObject: function () {
