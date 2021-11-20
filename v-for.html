@@ -9,11 +9,18 @@
   <body>
     <script src="vue.js"></script>
 
-    <div id="app"></div>
+    <div id="app">
+      <ul>
+        <li v-for="fruit in fruits">{{ fruit }}</li>
+      </ul>
+    </div>
+
     <script>
       new Vue({
         el: "#app",
-        data: {},
+        data: {
+          fruits: ["りんご", "バナナ", "ぶどう"],
+        },
       });
     </script>
   </body>
