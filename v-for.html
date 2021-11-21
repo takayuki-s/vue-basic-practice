@@ -33,6 +33,13 @@
       <ul>
         <li v-for="n of 10">{{ n }}</li>
       </ul>
+      <ul>
+        <div v-for="(fruit) in fruits" :key="fruit">
+          <li>{{ fruit }}</li>
+          <input type="text" />
+        </div>
+      </ul>
+      <button @click="remove">先頭を削除</button>
     </div>
 
     <script>
@@ -44,6 +51,11 @@
             firstName: "太郎",
             lastName: "田中",
             age: 21,
+          },
+        },
+        methods: {
+          remove: function () {
+            this.fruits.shift();
           },
         },
       });
