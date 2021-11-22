@@ -21,7 +21,7 @@
         name: "てけTECH",
       };
       var vm = new Vue({
-        el: "#app",
+        // el: "#app",
         // data: {
         //   message: "こんにちは",
         //   name: "てけ",
@@ -34,9 +34,8 @@
           },
         },
       });
-      console.log(data === vm.$data);
-      console.log(vm);
-      console.log(vm.$data); // "data"ではなく"$data"
+
+      vm.$mount("#app");
     </script>
   </body>
 </html>
