@@ -12,9 +12,6 @@
     <div id="app">
       <p>{{ message }}</p>
       <p>{{ name }}</p>
-      <button @click="name = 'ボタンから変更'">
-        name変更（リアクティブじゃないので動かないよ！）
-      </button>
       <button @click="message = 'ボタンから変更'">message変更</button>
     </div>
     <script>
@@ -22,14 +19,11 @@
         el: "#app",
         data: {
           message: "こんにちは",
+          name: "てけ",
         },
       });
-
-      vm.message = "書き換えられました";
-
-      vm.name = "てけ"; //リアクティブではない
-
       console.log(vm);
+      console.log(vm.$data); // "data"ではなく"$data"
     </script>
   </body>
 </html>
