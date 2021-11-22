@@ -15,13 +15,19 @@
       <button @click="message = 'ボタンから変更'">message変更</button>
     </div>
     <script>
+      var data = {
+        message: "こんばんは",
+        name: "てけTECH",
+      };
       var vm = new Vue({
         el: "#app",
         data: {
           message: "こんにちは",
           name: "てけ",
+          data: data,
         },
       });
+      console.log(data === vm.$data.data);
       console.log(vm);
       console.log(vm.$data); // "data"ではなく"$data"
     </script>
