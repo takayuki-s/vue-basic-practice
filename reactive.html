@@ -12,6 +12,7 @@
     <div id="app">
       <p>{{ message }}</p>
       <p>{{ name }}</p>
+      <p>{{ myData }}</p>
       <button @click="message = 'ボタンから変更'">message変更</button>
     </div>
     <script>
@@ -21,13 +22,19 @@
       };
       var vm = new Vue({
         el: "#app",
-        data: {
-          message: "こんにちは",
-          name: "てけ",
-          data: data,
+        // data: {
+        //   message: "こんにちは",
+        //   name: "てけ",
+        //   data: data,
+        // },
+        data: data,
+        computed: {
+          myData: function () {
+            return this.$data;
+          },
         },
       });
-      console.log(data === vm.$data.data);
+      console.log(data === vm.$data);
       console.log(vm);
       console.log(vm.$data); // "data"ではなく"$data"
     </script>
