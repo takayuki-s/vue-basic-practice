@@ -51,8 +51,8 @@
         data: {
           name: "レンダー",
         },
-        render: function (createElement) {
-          return createElement("h1", "こんにちは");
+        render: function (h) {
+          return h("h1", "こんにちは");
         },
       }).$mount("#app3");
     </script>
