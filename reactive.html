@@ -15,6 +15,8 @@
       <p>{{ myData }}</p>
       <button @click="message = 'ボタンから変更'">message変更</button>
     </div>
+
+    <div id="app2"></div>
     <script>
       var data = {
         message: "こんばんは",
@@ -36,6 +38,13 @@
       });
 
       vm.$mount("#app");
+
+      new Vue({
+        data: {
+          name: "テスト",
+        },
+        template: "<h1>こんにちは、{{ name }}</h1>",
+      }).$mount("#app2");
     </script>
   </body>
 </html>
