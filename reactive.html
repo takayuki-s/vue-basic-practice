@@ -18,18 +18,16 @@
 
     <div id="app2"></div>
     <div id="app3"></div>
+    <div id="app4">
+      <h1>こんにちは</h1>
+    </div>
+
     <script>
       var data = {
         message: "こんばんは",
         name: "てけTECH",
       };
       var vm = new Vue({
-        // el: "#app",
-        // data: {
-        //   message: "こんにちは",
-        //   name: "てけ",
-        //   data: data,
-        // },
         data: data,
         computed: {
           myData: function () {
@@ -55,6 +53,40 @@
           return h("h1", "こんにちは、" + this.name);
         },
       }).$mount("#app3");
+
+      new Vue({
+        el: "#app4",
+        data: {
+          name: "てけ",
+        },
+        beforeCreate: function () {
+          console.log("beforeCreate");
+        },
+        created: function () {
+          console.log("created");
+        },
+        beforeMount: function () {
+          console.log("beforeMount");
+        },
+        mounted: function () {
+          console.log("mounted");
+        },
+        beforeUpdate: function () {
+          console.log("beforeUpdate");
+        },
+        updated: function () {
+          console.log("updated");
+        },
+        beforeDestroy: function () {
+          console.log("beforeDestroy");
+        },
+        beforeDestroy: function () {
+          console.log("beforeDestroy");
+        },
+        destroyed: function () {
+          console.log("destroyed");
+        },
+      });
     </script>
   </body>
 </html>
