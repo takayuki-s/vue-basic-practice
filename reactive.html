@@ -19,7 +19,9 @@
     <div id="app2"></div>
     <div id="app3"></div>
     <div id="app4">
-      <h1>こんにちは</h1>
+      <h1>こんにちは、{{ name }}</h1>
+      <button @click="name = '太郎'">名前を変更</button>
+      <button @click="destroy">インスタンスを破壊</button>
     </div>
 
     <script>
@@ -85,6 +87,11 @@
         },
         destroyed: function () {
           console.log("destroyed");
+        },
+        methods: {
+          destroy: function () {
+            this.$destroy();
+          },
         },
       });
     </script>
