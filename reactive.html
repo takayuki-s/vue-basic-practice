@@ -23,6 +23,8 @@
       <button @click="name = '太郎'">名前を変更</button>
       <button @click="destroy">インスタンスを破壊</button>
     </div>
+    <div class="greeting"></div>
+    <div class="greeting"></div>
 
     <script>
       var data = {
@@ -93,6 +95,11 @@
             this.$destroy();
           },
         },
+      });
+
+      new Vue({
+        el: ".greeting",
+        template: "<p>こんにちは</p>",
       });
     </script>
   </body>
