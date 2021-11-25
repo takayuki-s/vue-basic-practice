@@ -13,6 +13,8 @@
       <p>{{ message }}</p>
       <p>{{ name }}</p>
       <p>{{ myData }}</p>
+      <hello></hello>
+      <hello></hello>
       <button @click="message = 'ボタンから変更'">message変更</button>
     </div>
 
@@ -31,6 +33,11 @@
         message: "こんばんは",
         name: "てけTECH",
       };
+
+      Vue.component("hello", {
+        template: "<p>こんにちは</p>",
+      });
+
       var vm = new Vue({
         data: data,
         computed: {
