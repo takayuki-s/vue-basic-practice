@@ -16,13 +16,20 @@
     </div>
 
     <script>
+      var data = {
+        number: 12,
+      };
       Vue.component("my-component", {
         data: () => {
-          return {
-            number: 12,
-          };
+          return data;
         },
-        template: "<p>{{number}}回",
+        template: '<p>{{number}}回<button @click="increment">+1</button></p>',
+        methods: {
+          increment: function () {
+            console.log(this.number);
+            this.number += 1;
+          },
+        },
       });
       new Vue({
         el: "#app",
